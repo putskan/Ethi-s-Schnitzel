@@ -1,0 +1,212 @@
+/* Hebrew - Miriam Libre Font */
+@font-face {
+  font-family: 'Miriam Libre';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Miriam Libre Regular'), local('MiriamLibre-Regular'), url(/static/fonts/MiriamLibre.woff2) format('woff2');
+  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
+/* English - Ubuntu Mono Font
+/* latin-ext */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(/static/fonts/UbuntuMono-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(/static/fonts/UbuntuMono-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #058a00;
+    cursor: crosshair;
+    /* Varela Round for Hebrew, Ubunto Mono for English */
+    font-family: 'Miriam Libre', 'Ubuntu Mono';
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+/* For Hebrew Text */
+.rtl {
+    direction: rtl;
+}
+
+.page-head {
+    width: 100%;
+    height: 80px;
+    border-bottom-style: solid;
+    border-color: #058a00;
+    padding-top-top: 20px;
+    padding-bottom: 5px;
+}
+
+.logo-div {
+    float: left;
+    width: 100%;
+    height: 100%;
+    padding: 5px 0px 0px 30px;
+    position: relative;
+    top: 0;
+}
+
+.logo {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    top: 20%;
+}
+
+.question-header-div {
+    width: 100%;
+    height: 100px;
+    padding-top: 40px;
+}
+
+.question-header {
+    text-align: center;
+    font-size: 30px;
+}
+
+.question-div {
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+/* Adjust question height for smaller screens (standard 19 inch, for example) */
+@media only screen and (max-width: 1500px) {
+  .question-div {
+    height: 150px;
+  }
+}
+
+.question-paragraph {
+    word-wrap: break-word;
+}
+
+.presented-answers-article {
+    width: 80%;
+    height: 100px;
+    margin: 0 auto;
+}
+
+.presented-answer {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.user-input-output-div {
+    width: 60%;
+    height: 200px;
+    margin: 0 auto;
+    margin-right: 100px;
+    padding-bottom: 100px;
+    padding-top: 100px;
+}
+
+.users-answer {
+    float: left;
+    width: 40%;
+    text-align: left;
+
+}
+
+.system-output-div {
+    float: right;
+    width: 40%;
+    float: left;
+    text-align: center;
+    font-size: 20px;
+}
+
+footer {
+    border-top-style: solid;
+    width: 100%;
+    height: 100px;
+}
+
+.buttons-div {
+    width: 100%;
+    height: 80%;
+    padding-left: 50px;
+    margin: 0 auto;
+}
+
+button {
+    border: none;
+    background: none;
+    padding: 30px;
+    font-size: 18px;
+    float: left;
+    outline: none
+}
+
+input {
+    border-width: 0;
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    font-size: 20px;
+}
+
+input:focus {
+      outline: none;
+}
+
+fieldset {
+ display: none; 
+}
+
+
+/*** Entry Page Specifics - BEGIN ***/
+.game-header-div {
+    width: 100%;
+    height: 100px;
+    padding-top: 40px;
+}
+
+.game-header {
+    text-align: center;
+    font-size: 30px;
+    letter-spacing: 0.2em;
+}
+
+.explanation-div {
+    width: 80%;
+    margin: 0 auto;
+    height: 350px;
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.name-entry-div {
+    width: 50%;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.name-entry-div form {
+    width: 100%;
+    height: 100%;
+}
+/*** Entry Page Specifics - END ***/

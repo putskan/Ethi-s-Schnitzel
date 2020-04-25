@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="he">
+	<head>
+		<meta charset="utf-8">
+	    <title>Cyber Array</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/personal_statistics.css') }}">
+	</head>	
+
+	<body>
+		<table class="graph">
+			<caption>{{ username.capitalize() }}'s Statistics</caption>
+			<thead>
+				<tr>
+					<th scope="col">Item</th>
+					<th scope="col">Percent</th>
+				</tr>
+			</thead>
+			<tbody>
+				{% for category_attributes in personal_category_statistics_results %}
+				<tr style="height:{{ category_attributes[3] }}%">
+					<th scope="row">{{ category_attributes[0] }}</th>
+					<td><span>{{ category_attributes[3] }}%</span></td>
+				</tr>
+				{% endfor %}
+			</tbody>
+		</table>
+
+	</body>
+</html>

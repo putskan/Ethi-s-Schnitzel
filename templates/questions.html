@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="he">
+	<head>
+		<meta charset="utf-8">
+	    <title>Cyber Array</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+	</head>	
+
+	<body>
+		<div class="page-head">
+			<div class="logo-div">
+				<img src="./static/pics/logo.png" alt="logo" class="logo">
+			</div>
+		</div>
+
+		<main>
+			<div class="question-header-div">
+				<h1 id="question-header-id" class="question-header">שאלה 1</h1>
+			</div>
+			<!-- question paragraph and answers will be filled automaticaly via JS -->
+			<div class="question-div">
+				<p id="question-paragraph-id" class="question-paragraph rtl"></p>
+			</div>
+
+			<article class="presented-answers-article">
+				<div id="answer-a-id" class="presented-answer rtl"></div>
+				<div id="answer-b-id" class="presented-answer rtl"></div>
+				<div id="answer-c-id" class="presented-answer rtl"></div>
+			</article>
+			<div class="user-input-output-div">
+				<div class="users-answer">
+					<form autocomplete="off"> 
+					  <label for="answer">>>> </label>
+					  <input type="text" id="answer" name="answer" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
+					</form>
+				</div>
+
+				 <!-- this is the reaction to the answer (i.e the output for a submit) -->
+				<div class="system-output-div">
+					<p id="system-output-p-id" class="system-output-p"></p>
+				</div>
+			</div>
+
+		</main>
+
+		<footer>
+			<div class="buttons-div">
+					<button type="button" class="disabled right-side-button">F4: Cyber Effects</button>
+					<button type="button" class="disabled left-side-button">F8: Previous Question</button>
+					<button type="button" class="disabled left-side-button">F9: Next Question</button>
+					<button type="button" class="disabledright-side-button">F10: Help</button>
+					<button type="button" class="disabled right-side-button">F11: Full Screen</button>
+			</div>
+		</footer>
+	</body>
+	<!-- Get relevant variables from flask -->
+	<script type="text/javascript">const questionsRaw = {{ questionsRaw }};const username = '{{ username }}';</script>
+	<!-- Does all the magic - handle submits, keystrokes, self-writing effect etc. -->
+	<script type="text/javascript" src="./static/js/questions_script.js"></script>
+</html>

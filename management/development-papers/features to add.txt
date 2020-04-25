@@ -1,0 +1,17 @@
+on click - F11 full screen Effect
+change caret (cursor to buttom in answer box)
+save answers via cookie
+top right - ADD 1/25 question bar & username
+add distinct only values to DB (or query them)
+don't let people double choose the same name
+add teams to the game (so running the game more than once won't be needed)
+When pressing Enter out of input scope, don't send
+make sure index.html also goes inside "Name" when pressing a button
+PREVIOUS AND NEXT QUESTION
+GAME DOCUMENTATION
+add an icon
+CHECK IF EXCEL IS VALID
+
+Additional Bugs after operational run:
+- Bug in heading after 10th question (tries removing the last Char instead of replace(questionbefore, questionafter))
+- Responsivenesss - one button slides down in 1024x768

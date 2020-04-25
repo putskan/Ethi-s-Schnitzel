@@ -1,0 +1,108 @@
+/* Hebrew - Miriam Libre Font */
+@font-face {
+  font-family: 'Miriam Libre';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Miriam Libre Regular'), local('MiriamLibre-Regular'), url(/static/fonts/MiriamLibre.woff2) format('woff2');
+  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
+/* English - Ubuntu Mono Font
+/* latin-ext */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(/static/fonts/UbuntuMono-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(/static/fonts/UbuntuMono-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+* {
+	box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    cursor: crosshair;
+    /* Varela Round for Hebrew, Ubunto Mono for English */
+    font-family: 'Miriam Libre', 'Ubuntu Mono';
+}
+
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+.main-header-div {
+	width: 100%;
+	height: 150px;
+	font-size: 20px;
+	margin: 0, auto;
+	padding-top: 60px;
+}
+
+.main-header-div h1 {
+	text-align: center;
+}
+
+#chartContainer {
+	margin-top: 0;
+
+}
+
+.button-div {
+	margin: 0 auto;
+	width: 60%;
+}
+
+#next-question-button {
+	float: right;
+
+}
+
+#previous-question-button {
+	float: left;
+}
+
+a.button-a {
+	background-color: #3399FF;
+	display: inline-block;
+	padding: 0.46em 1.6em;
+	border: 0.1em solid #000000;
+	margin: 0 0.2em 0.2em 0;
+	border-radius: 0.4em;
+	text-decoration: none;
+	font-weight: 300;
+	color: #000000;
+	text-shadow: 0 0.04em 0.04em rgba(0, 0, 0, 0.35);
+	text-align: center;
+	transition: all 0.15s
+}
+
+a.button-a:hover {
+	text-shadow: 0 0 2em gray;
+	color: white;
+	border-color: #159;
+}
+
+@media all and (max-width:30em){
+ a.button-a {
+	display: block;
+	margin: 0.4em auto;
+ }
+}
+
+
+
+
+

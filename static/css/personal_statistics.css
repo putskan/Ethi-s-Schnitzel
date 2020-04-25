@@ -1,0 +1,193 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #111;
+    color: #058a00;
+    cursor: crosshair;
+    /* Varela Round for Hebrew, Ubunto Mono for English */
+    font-family: 'Miriam Libre', 'Ubuntu Mono';
+}
+
+/* Hebrew - Miriam Libre Font */
+@font-face {
+  font-family: 'Miriam Libre';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Miriam Libre Regular'), local('MiriamLibre-Regular'), url(/static/fonts/MiriamLibre.woff2) format('woff2');
+  unicode-range: U+0590-05FF, U+20AA, U+25CC, U+FB1D-FB4F;
+}
+
+/* English - Ubuntu Mono Font
+/* latin-ext */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(/static/fonts/UbuntuMono-latin-ext.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB, U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(/static/fonts/UbuntuMono-latin.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+table {
+    padding-top: 50px;
+    padding-bottom: 120px;
+    margin: 0 auto;
+}
+
+.graph {
+    margin-bottom:1em;
+    font:normal 100%/150%;
+}
+
+.graph caption {
+    font:bold 150%/120%;
+    padding-bottom:8em;
+}
+
+.graph tbody th {
+    text-align:right;
+}
+
+@supports (display:grid) {
+
+    @media (min-width:32em) {
+
+        .graph {
+            display:block;
+            width:600px;
+            height:400px;
+        }
+
+        .graph caption {
+            display:block;
+        }
+
+        .graph thead {
+            display:none;
+        }
+
+        .graph tbody {
+            position:relative;
+            display:grid;
+            grid-template-columns:repeat(auto-fit, minmax(2em, 1fr));
+            column-gap:2.5%;
+            align-items:end;
+            height:100%;
+            margin:3em 0 1em 2.8em;
+            padding:0 1em;
+            border-bottom:2px solid rgba(0,0,0,0.5);
+            background:repeating-linear-gradient(
+                180deg,
+                rgba(170,170,170,0.7) 0,
+                rgba(170,170,170,0.7) 1px,
+                transparent 1px,
+                transparent 20%
+            );
+        }
+
+        .graph tbody:before,
+        .graph tbody:after {
+            position:absolute;
+            left:-3.2em;
+            width:2.8em;
+            text-align:right;
+            font:bold 80%/120%;
+        }
+
+        .graph tbody:before {
+            content:"100%";
+            top:-0.6em;
+        }
+
+        .graph tbody:after {
+            content:"0%";
+            bottom:-0.6em;
+        }
+
+        .graph tr {
+            position:relative;
+            display:block;
+        }
+
+        .graph tr:hover {
+            z-index:999;
+        }
+
+        .graph th,
+        .graph td {
+            display:block;
+            text-align:center;
+            background-color: transparent;
+        }
+
+        .graph tbody th {
+            position:absolute;
+            top:-4em;
+            left:0;
+            width:100%;
+            font-weight:normal;
+            text-align:center;
+            white-space:nowrap;
+            text-indent:0;
+            transform:rotate(-45deg);
+
+        }
+
+        .graph tbody th:after {
+            content:"";
+        }
+
+        .graph td {
+            width:100%;
+            height:100%;
+            background: #058a00;
+            border-radius:0.5em 0.5em 0 0;
+            transition:background 0.5s;
+        }
+
+        .graph tr:hover td {
+            opacity:0.85;
+        }
+
+        .graph td span {
+            overflow:hidden;
+            position:absolute;
+            left: 50%;
+            top: 50%;
+            width:0;
+            padding: 0.5em 0;
+            margin: -1em 0 0;
+            font:normal 65%/90%;
+            border-radius: 20px;
+            box-shadow:0.3em 0.3em 0.3em rgba(0,0,0,0.6);
+            font-weight:bold;
+            opacity:0;
+            transition:opacity 0.5s;
+        }
+
+        .toggleGraph:checked + table td span,
+        .graph tr:hover td span {
+            width:4em;
+            margin-left:-2em; /* Half the declared width */
+            opacity:1;
+        }
+
+
+
+    
+
+
+    }
+
+}

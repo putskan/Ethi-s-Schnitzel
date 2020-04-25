@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+ 		<link rel="stylesheet" href="{{ url_for('static', filename='css/full_statistics.css') }}">
+	</head>
+	<body>
+		<div class="main-header-div">
+			<h1 id="main-header-id">Statistics - Question </h1>
+		</div>
+		<div id="chartContainer" style="height: 370px; width: 100%;"></div>
+		<div class="button-div">
+			<a href="/fullStatistics/{{ question_number + 1 }}" id="next-question-button" class="button-a">Next Question</a>
+			<a href="/fullStatistics/{{ question_number - 1 }}" id="previous-question-button" class="button-a">Previous Question</a>
+		</div>
+
+
+		<!-- Scripts BEGIN -->
+		<!-- Init Chart -->
+		<script>
+		window.onload = function() {
+			var chart = new CanvasJS.Chart("chartContainer", {
+				animationEnabled: true,
+				data: [{
+					type: "pie",
+					startAngle: 240,
+					yValueFormatString: "##0.00\"%\"",
+					indexLabel: "{label} {y}",
+					dataPoints: [
+						{% for answer_tuple in answers_stats %}
+						{y: {{ answer_tuple[1] }}, label: "{{ answer_tuple[0] }}"},
+						{% endfor %}
+					]
+				}]
+			});
+			chart.render();
+			}
+		</script>
+		<script src="{{ url_for('static', filename='js/piechart.js') }}"></script>
+
+		<!-- Handle Next & Previous Buttons -->
+		<script type="text/javascript">
+			if ({{ question_number }} === {{ total_number_of_questions }}) {
+				document.getElementById("next-question-button").setAttribute("href", "");
+			}
+			if ({{ question_number }} === 1) {
+				document.getElementById("previous-question-button").setAttribute("href", "");
+			} 
+		</script>
+
+		<!-- Handle Header -->
+		<script type="text/javascript">
+			document.getElementById("main-header-id").innerHTML += {{ question_number }} + "/" + {{ total_number_of_questions }};
+		</script>
+		<!-- Scripts END -->
+	</body>
+</html>

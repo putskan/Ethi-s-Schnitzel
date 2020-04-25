@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="he">
+	<head>
+		<meta charset="utf-8">
+	    <title>Cyber Array</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/stylesheet.css') }}">
+	</head>	
+
+	<body>
+
+		<div class="page-head">
+			<div class="logo-div">
+				<img src="./static/pics/logo.png" alt="logo" class="logo">
+			</div>
+		</div>
+
+		<div class="game-header-div">
+			<h1 class="game-header">W3lC0M3</h1>	
+		</div>
+
+		<div class="explanation-div rtl">
+			<p id="explanation-first-paragraph-id">
+				שלום וברוכים הבאים. <br>
+				בקרוב יוצגו לפניכם
+			</p>
+			<p>
+				<br><br>
+				בכל דילמה, עליכם לבחור בגישה אליה אתם הכי מתחברים (תוך שימוש באותיות A/B/C ובלחצן ה-Enter האהוב).<br>
+				במידה ויש לכם גישה נוספת שאינה כתובה, מצוין. תשאירו אותה בראש.<br>
+				במידה והשאלות לא עושות היגיון - אל דאגה, יש רציונל. תמשיכו.<br><br>
+				תהנו!
+			</p>
+		</div>
+
+		<div class="name-entry-div">
+			<form action="/questions" method="get" autocomplete="off"> 
+			  <label for="username">Pick Your Username: </label>
+			  <input type="text" id="username" name="username" autocorrect="off" autocapitalize="off" spellcheck="false" autofocus>
+			</form>
+		</div>
+
+	</body>
+
+	<!-- Add the amount of questions to the text -->
+	<script type="text/javascript">
+		document.getElementById("explanation-first-paragraph-id").innerHTML += " {{ total_number_of_questions }} דילמות.";
+	</script>
+</html>

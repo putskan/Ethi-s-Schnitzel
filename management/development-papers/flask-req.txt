@@ -1,0 +1,8 @@
+*** PROBABLY WONT BE NEEDED ***
+
+python 3.6+
+pip install virtualenv
+virtualenv env
+run \env\Scripts\activate.bat
+pip install flask flask-sqlalchemy django pandas numpy 
+pip install xlrd sqlalchemy (will be possibly  needed)
